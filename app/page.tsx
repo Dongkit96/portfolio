@@ -4,7 +4,7 @@ export default function Home() {
             <header style={{ marginBottom: 48 }}>
                 <h1 style={{ fontSize: 44, margin: 0 }}>3D Character Artist / Tech (Rigging)</h1>
                 <p style={{ fontSize: 18, opacity: 0.8, marginTop: 12 }}>
-                    Unity · UE5 | Character Modeling · Retopo · Rigging · Game-ready Pipeline
+                    Unity 路 UE5 | Character Modeling 路 Retopo 路 Rigging 路 Game-ready Pipeline
                 </p>
 
                 <div style={{ display: "flex", gap: 12, marginTop: 20, flexWrap: "wrap" }}>

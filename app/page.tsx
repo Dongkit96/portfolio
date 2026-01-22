@@ -77,11 +77,7 @@ export default function Home() {
                     ].map((item) => (
                         <Link
                             key={item.slug}
-                            href={
-                                isProd
-                                    ? `${BASE_PATH}/projects/${item.slug}.html` // GitHub Pages용
-                                    : `/projects/${item.slug}`                 // 로컬 dev용
-                            }
+                            href={`${BASE_PATH}/projects/${item.slug}/`}   // 핵심: 슬래시로 끝
                             style={{ textDecoration: "none", color: "inherit" }}
                         >
                             <div

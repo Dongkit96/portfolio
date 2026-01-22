@@ -52,14 +52,15 @@ export function generateStaticParams() {
     return Object.keys(PROJECTS).map((slug) => ({ slug }));
 }
 
+
 export default function ProjectDetailPage({
     params,
 }: {
     params: { slug: string };
 }) {
     const { slug } = params;
-    const project = PROJECTS[slug];
 
+    const project = PROJECTS[slug];
     if (!project) {
         return (
             <main style={{ maxWidth: 980, margin: "0 auto", padding: "56px 20px" }}>

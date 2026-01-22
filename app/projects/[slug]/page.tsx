@@ -1,15 +1,12 @@
 ﻿import Link from "next/link";
-// app/projects/[slug]/page.tsx
 
+// GitHub Pages basePath 대응 (예: /portfolio)
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+// 정적 export용
 export const dynamic = "force-static";
 
-// PROJECTS 객체(혹은 slug 목록)를 이미 가지고 있다면 그걸 사용
-export async function generateStaticParams() {
-    return Object.keys(PROJECTS).map((slug) => ({ slug }));
-}
-
 const PROJECTS: Record<
-
     string,
     {
         title: string;
@@ -52,13 +49,16 @@ const PROJECTS: Record<
     },
 };
 
-export default async function ProjectDetailPage({
+export async function generateStaticParams() {
+    return Object.keys(PROJECTS).map((slug) => ({ slug }));
+}
+
+export default function ProjectDetailPage({
     params,
 }: {
-    params: Promise<{ slug: string }>;
+    params: { slug: string };
 }) {
-    const { slug } = await params;
-
+    const { slug } = params;
     const project = PROJECTS[slug];
 
     if (!project) {
@@ -68,7 +68,7 @@ export default async function ProjectDetailPage({
                 <p style={{ opacity: 0.75, marginBottom: 18 }}>
                     존재하지 않는 프로젝트입니다: <b>{slug}</b>
                 </p>
-                <Link href="/" style={{ textDecoration: "underline" }}>
+                <Link href={`${BASE_PATH}/`} style={{ textDecoration: "underline" }}>
                     ← Home으로 돌아가기
                 </Link>
             </main>
@@ -77,7 +77,7 @@ export default async function ProjectDetailPage({
 
     return (
         <main style={{ maxWidth: 980, margin: "0 auto", padding: "56px 20px" }}>
-            <Link href="/" style={{ textDecoration: "underline", opacity: 0.85 }}>
+            <Link href={`${BASE_PATH}/`} style={{ textDecoration: "underline", opacity: 0.85 }}>
                 ← Back
             </Link>
 
@@ -132,35 +132,37 @@ export default async function ProjectDetailPage({
                         gap: 14,
                     }}
                 >
-                    {project.media.map((m) => (
-                        <div
-                            key={m.url}
-                            style={{
-                                border: "1px solid #222",
-                                borderRadius: 14,
-                                padding: 14,
-                                background: "rgba(255,255,255,0.02)",
-                            }}
-                        >
-                            <div style={{ fontSize: 14, opacity: 0.8, marginBottom: 10 }}>
-                                {m.label}
-                            </div>
-
-                            {/* 이미지 파일 없으면 깨져도 정상. 나중에 public/images에 넣으면 자동 표시됨 */}
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src={m.url}
-                                alt={m.label}
+                    {project.media.map((m) => {
+                        const src = `${BASE_PATH}${m.url}`; // 핵심: basePath 붙이기
+                        return (
+                            <div
+                                key={m.url}
                                 style={{
-                                    width: "100%",
-                                    height: 180,
-                                    objectFit: "cover",
-                                    borderRadius: 12,
-                                    border: "1px solid #1a1a1a",
+                                    border: "1px solid #222",
+                                    borderRadius: 14,
+                                    padding: 14,
+                                    background: "rgba(255,255,255,0.02)",
                                 }}
-                            />
-                        </div>
-                    ))}
+                            >
+                                <div style={{ fontSize: 14, opacity: 0.8, marginBottom: 10 }}>
+                                    {m.label}
+                                </div>
+
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src={src}
+                                    alt={m.label}
+                                    style={{
+                                        width: "100%",
+                                        height: 180,
+                                        objectFit: "cover",
+                                        borderRadius: 12,
+                                        border: "1px solid #1a1a1a",
+                                    }}
+                                />
+                            </div>
+                        );
+                    })}
                 </div>
             </section>
         </main>

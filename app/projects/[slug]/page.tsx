@@ -3,7 +3,6 @@ import Link from "next/link";
 // GitHub Pages basePath 대응 (예: /portfolio)
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-// 정적 export용
 export const dynamic = "force-static";
 
 const PROJECTS: Record<
@@ -49,7 +48,7 @@ const PROJECTS: Record<
     },
 };
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
     return Object.keys(PROJECTS).map((slug) => ({ slug }));
 }
 
@@ -59,10 +58,21 @@ export default function ProjectDetailPage({
     params: { slug: string };
 }) {
     const { slug } = params;
-
     const project = PROJECTS[slug];
 
-   
+    if (!project) {
+        return (
+            <main style={{ maxWidth: 980, margin: "0 auto", padding: "56px 20px" }}>
+                <h1 style={{ fontSize: 28, marginBottom: 12 }}>Project not found</h1>
+                <p style={{ opacity: 0.75, marginBottom: 18 }}>
+                    존재하지 않는 프로젝트입니다: <b>{slug}</b>
+                </p>
+                <Link href={`${BASE_PATH}/`} style={{ textDecoration: "underline" }}>
+                    ← Home으로 돌아가기
+                </Link>
+            </main>
+        );
+    }
 
     return (
         <main style={{ maxWidth: 980, margin: "0 auto", padding: "56px 20px" }}>

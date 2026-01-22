@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Home() {
     return (
         <main style={{ minHeight: "100vh", padding: "80px 24px", maxWidth: 1100, margin: "0 auto" }}>
@@ -58,27 +59,40 @@ export default function Home() {
             <section style={{ marginBottom: 48 }}>
                 <h2 style={{ fontSize: 24, marginBottom: 14 }}>Portfolio</h2>
 
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
+                <div
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                        gap: 16,
+                    }}
+                >
                     {[
-                        { title: "Warrior Character (Blender Render)", desc: "Modeling / Shading / Lighting / Render" },
-                        { title: "Game-ready Topology", desc: "Clean quad flow / deformation friendly" },
-                        { title: "Rigging + Skinning", desc: "Auto-Rig Pro / weight paint / facial setup" },
+                        { slug: "warrior", title: "Warrior Character (Blender Render)", desc: "Modeling / Shading / Lighting / Render" },
+                        { slug: "topology", title: "Game-ready Topology", desc: "Clean quad flow / deformation friendly" },
+                        { slug: "rigging", title: "Rigging + Skinning", desc: "Auto-Rig Pro / weight paint / facial setup" },
                     ].map((item) => (
-                        <div
-                            key={item.title}
-                            style={{
-                                border: "1px solid #222",
-                                borderRadius: 14,
-                                padding: 18,
-                                background: "rgba(255,255,255,0.02)",
-                            }}
+                        <Link
+                            key={item.slug}
+                            href={`/projects/${item.slug}`}
+                            style={{ textDecoration: "none", color: "inherit" }}
                         >
-                            <h3 style={{ margin: 0, fontSize: 18 }}>{item.title}</h3>
-                            <p style={{ marginTop: 8, opacity: 0.75 }}>{item.desc}</p>
-                        </div>
+                            <div
+                                style={{
+                                    border: "1px solid #222",
+                                    borderRadius: 14,
+                                    padding: 18,
+                                    background: "rgba(255,255,255,0.02)",
+                                }}
+                            >
+                                <h3 style={{ margin: 0, fontSize: 18 }}>{item.title}</h3>
+                                <p style={{ marginTop: 8, opacity: 0.75 }}>{item.desc}</p>
+                            </div>
+                        </Link>
                     ))}
+
                 </div>
             </section>
+
 
             <section>
                 <h2 style={{ fontSize: 24, marginBottom: 14 }}>Contact</h2>

@@ -59,6 +59,7 @@ export default function ProjectDetailPage({
     params: { slug: string };
 }) {
     const { slug } = params;
+
     const project = PROJECTS[slug];
 
     if (!project) {
@@ -68,7 +69,7 @@ export default function ProjectDetailPage({
                 <p style={{ opacity: 0.75, marginBottom: 18 }}>
                     존재하지 않는 프로젝트입니다: <b>{slug}</b>
                 </p>
-                <Link href={`${BASE_PATH}/`} style={{ textDecoration: "underline" }}>
+                <Link href="/" style={{ textDecoration: "underline" }}>
                     ← Home으로 돌아가기
                 </Link>
             </main>

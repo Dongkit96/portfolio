@@ -1,65 +1,91 @@
-import Image from "next/image";
-
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    return (
+        <main style={{ minHeight: "100vh", padding: "80px 24px", maxWidth: 1100, margin: "0 auto" }}>
+            <header style={{ marginBottom: 48 }}>
+                <h1 style={{ fontSize: 44, margin: 0 }}>3D Character Artist / Tech (Rigging)</h1>
+                <p style={{ fontSize: 18, opacity: 0.8, marginTop: 12 }}>
+                    Unity ， UE5 | Character Modeling ， Retopo ， Rigging ， Game-ready Pipeline
+                </p>
+
+                <div style={{ display: "flex", gap: 12, marginTop: 20, flexWrap: "wrap" }}>
+                    <a
+                        href="https://www.youtube.com/@%EC%82%AC%ED%88%AC%ED%99%94"
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                            padding: "10px 14px",
+                            borderRadius: 10,
+                            border: "1px solid #333",
+                            textDecoration: "none",
+                            color: "white",
+                        }}
+                    >
+                        YouTube
+                    </a>
+
+                    <a
+                        href="https://www.sooplive.co.kr/station/staynight647"
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                            padding: "10px 14px",
+                            borderRadius: 10,
+                            border: "1px solid #333",
+                            textDecoration: "none",
+                            color: "white",
+                        }}
+                    >
+                        SOOP
+                    </a>
+
+                    <a
+                        href="https://github.com/Dongkit96"
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                            padding: "10px 14px",
+                            borderRadius: 10,
+                            border: "1px solid #333",
+                            textDecoration: "none",
+                            color: "white",
+                        }}
+                    >
+                        GitHub
+                    </a>
+                </div>
+            </header>
+
+            <section style={{ marginBottom: 48 }}>
+                <h2 style={{ fontSize: 24, marginBottom: 14 }}>Portfolio</h2>
+
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
+                    {[
+                        { title: "Warrior Character (Blender Render)", desc: "Modeling / Shading / Lighting / Render" },
+                        { title: "Game-ready Topology", desc: "Clean quad flow / deformation friendly" },
+                        { title: "Rigging + Skinning", desc: "Auto-Rig Pro / weight paint / facial setup" },
+                    ].map((item) => (
+                        <div
+                            key={item.title}
+                            style={{
+                                border: "1px solid #222",
+                                borderRadius: 14,
+                                padding: 18,
+                                background: "rgba(255,255,255,0.02)",
+                            }}
+                        >
+                            <h3 style={{ margin: 0, fontSize: 18 }}>{item.title}</h3>
+                            <p style={{ marginTop: 8, opacity: 0.75 }}>{item.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section>
+                <h2 style={{ fontSize: 24, marginBottom: 14 }}>Contact</h2>
+                <p style={{ opacity: 0.8 }}>
+                    Email: <b>your-email@example.com</b>
+                </p>
+            </section>
+        </main>
+    );
 }

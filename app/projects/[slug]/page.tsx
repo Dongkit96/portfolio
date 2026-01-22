@@ -78,7 +78,7 @@ export default function ProjectDetailPage({
 
     return (
         <main style={{ maxWidth: 980, margin: "0 auto", padding: "56px 20px" }}>
-            <Link href={`${BASE_PATH}/`} style={{ textDecoration: "underline", opacity: 0.85 }}>
+            <Link href={`${BASE_PATH}/projects/${slug}.html`} style={{ textDecoration: "underline", opacity: 0.85 }}>
                 ← Back
             </Link>
 

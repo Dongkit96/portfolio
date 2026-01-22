@@ -1,4 +1,4 @@
-import Link from "next/link";
+ï»¿import Link from "next/link";
 
 const PROJECTS: Record<
   string,
@@ -17,7 +17,7 @@ const PROJECTS: Record<
     role: ["Character Modeling", "Shading", "Lighting", "Render"],
     tools: ["Blender", "ZBrush", "Substance Painter"],
     description:
-      "°ÔÀÓ¿ë Ä³¸¯ÅÍ¸¦ ±âÁØÀ¸·Î ÇÏÀÌÆú¸® ¡æ ¸®ÅäÆú·ÎÁö ¡æ UV ¡æ ÅØ½ºÃ³ ¡æ ·»´õ±îÁö ÀüÃ¼ ÆÄÀÌÇÁ¶óÀÎÀ» ÁøÇàÇÑ ÀÛ¾÷ÀÔ´Ï´Ù.",
+      "ê²Œì„ìš© ìºë¦­í„°ë¥¼ ê¸°ì¤€ìœ¼ë¡œ í•˜ì´í´ë¦¬ â†’ ë¦¬í† í´ë¡œì§€ â†’ UV â†’ í…ìŠ¤ì²˜ â†’ ë Œë”ê¹Œì§€ ì „ì²´ íŒŒì´í”„ë¼ì¸ì„ ì§„í–‰í•œ ì‘ì—…ì…ë‹ˆë‹¤.",
     media: [
       { label: "Render Image", url: "/images/warrior_01.jpg" },
       { label: "Wireframe", url: "/images/warrior_wire.jpg" },
@@ -29,7 +29,7 @@ const PROJECTS: Record<
     role: ["Retopology", "Optimization", "Deformation check"],
     tools: ["Blender", "ZBrush"],
     description:
-      "¾Ö´Ï¸ŞÀÌ¼Ç º¯ÇüÀ» °í·ÁÇÑ Äõµå ±â¹İ ÅäÆú·ÎÁö ¼³°è¿Í °üÀı/¾ó±¼ ¿µ¿ª º¯Çü Å×½ºÆ®¸¦ Æ÷ÇÔÇÕ´Ï´Ù.",
+      "ì• ë‹ˆë©”ì´ì…˜ ë³€í˜•ì„ ê³ ë ¤í•œ ì¿¼ë“œ ê¸°ë°˜ í† í´ë¡œì§€ ì„¤ê³„ì™€ ê´€ì ˆ/ì–¼êµ´ ì˜ì—­ ë³€í˜• í…ŒìŠ¤íŠ¸ë¥¼ í¬í•¨í•©ë‹ˆë‹¤.",
     media: [{ label: "Topology Preview", url: "/images/topology_01.jpg" }],
   },
   rigging: {
@@ -38,7 +38,7 @@ const PROJECTS: Record<
     role: ["Rigging", "Skinning", "Facial setup"],
     tools: ["Blender", "Auto-Rig Pro"],
     description:
-      "°ÔÀÓ ¿£Áø(Unity/UE5) ¿¬µ¿À» °í·ÁÇÏ¿© º» ±¸Á¶, ¿şÀÌÆ® ÆäÀÎÆÃ, ±âº» ÆäÀÌ¼È ¼¼ÆÃ±îÁö ÁøÇàÇß½À´Ï´Ù.",
+      "ê²Œì„ ì—”ì§„(Unity/UE5) ì—°ë™ì„ ê³ ë ¤í•˜ì—¬ ë³¸ êµ¬ì¡°, ì›¨ì´íŠ¸ í˜ì¸íŒ…, ê¸°ë³¸ í˜ì´ì…œ ì„¸íŒ…ê¹Œì§€ ì§„í–‰í–ˆìŠµë‹ˆë‹¤.",
     media: [{ label: "Rigging Preview", url: "/images/rig_01.jpg" }],
   },
 };
@@ -57,10 +57,10 @@ export default async function ProjectDetailPage({
       <main style={{ maxWidth: 980, margin: "0 auto", padding: "56px 20px" }}>
         <h1 style={{ fontSize: 28, marginBottom: 12 }}>Project not found</h1>
         <p style={{ opacity: 0.75, marginBottom: 18 }}>
-          Á¸ÀçÇÏÁö ¾Ê´Â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù: <b>{slug}</b>
+          ì¡´ì¬í•˜ì§€ ì•ŠëŠ” í”„ë¡œì íŠ¸ì…ë‹ˆë‹¤: <b>{slug}</b>
         </p>
         <Link href="/" style={{ textDecoration: "underline" }}>
-          ¡ç HomeÀ¸·Î µ¹¾Æ°¡±â
+          â† Homeìœ¼ë¡œ ëŒì•„ê°€ê¸°
         </Link>
       </main>
     );
@@ -69,7 +69,7 @@ export default async function ProjectDetailPage({
   return (
     <main style={{ maxWidth: 980, margin: "0 auto", padding: "56px 20px" }}>
       <Link href="/" style={{ textDecoration: "underline", opacity: 0.85 }}>
-        ¡ç Back
+        â† Back
       </Link>
 
       <header style={{ marginTop: 18, marginBottom: 28 }}>
@@ -137,7 +137,7 @@ export default async function ProjectDetailPage({
                 {m.label}
               </div>
 
-              {/* ÀÌ¹ÌÁö ÆÄÀÏ ¾øÀ¸¸é ±úÁ®µµ Á¤»ó. ³ªÁß¿¡ public/images¿¡ ³ÖÀ¸¸é ÀÚµ¿ Ç¥½ÃµÊ */}
+              {/* ì´ë¯¸ì§€ íŒŒì¼ ì—†ìœ¼ë©´ ê¹¨ì ¸ë„ ì •ìƒ. ë‚˜ì¤‘ì— public/imagesì— ë„£ìœ¼ë©´ ìë™ í‘œì‹œë¨ */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={m.url}

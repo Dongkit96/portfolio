@@ -129,7 +129,7 @@ export default async function ProjectDetailPage({
                     }}
                 >
                     {project.media.map((m) => {
-                        const src = `${BASE_PATH}${m.url}`; // 핵심: basePath 붙이기
+                        const src = m.url; // 핵심: basePath 붙이기
                         return (
                             <div
                                 key={m.url}

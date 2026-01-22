@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 // GitHub Pages basePath 대응 (예: /portfolio)
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -69,7 +69,7 @@ export default function ProjectDetailPage({
                 <p style={{ opacity: 0.75, marginBottom: 18 }}>
                     존재하지 않는 프로젝트입니다: <b>{slug}</b>
                 </p>
-                <Link href="/" style={{ textDecoration: "underline" }}>
+                <Link href={`${BASE_PATH}/`} style={{ textDecoration: "underline" }}>
                     ← Home으로 돌아가기
                 </Link>
             </main>

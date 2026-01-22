@@ -1,8 +1,5 @@
 import Link from "next/link";
 
-// GitHub Pages basePath 대응 (예: /portfolio)
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
 export const dynamic = "force-static";
 
 const PROJECTS: Record<
@@ -48,27 +45,27 @@ const PROJECTS: Record<
     },
 };
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
     return Object.keys(PROJECTS).map((slug) => ({ slug }));
 }
 
-
-export default function ProjectDetailPage({
+export default async function ProjectDetailPage({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }) {
-    const { slug } = params;
+    const { slug } = await params;
 
     const project = PROJECTS[slug];
+
     if (!project) {
         return (
             <main style={{ maxWidth: 980, margin: "0 auto", padding: "56px 20px" }}>
                 <h1 style={{ fontSize: 28, marginBottom: 12 }}>Project not found</h1>
                 <p style={{ opacity: 0.75, marginBottom: 18 }}>
-                    존재하지 않는 프로젝트입니다: <b>{slug}</b>
+                    존재하지 않는 프로젝트입니다: <b>{String(slug)}</b>
                 </p>
-                <Link href={`${BASE_PATH}/`} style={{ textDecoration: "underline" }}>
+                <Link href="/" style={{ textDecoration: "underline" }}>
                     ← Home으로 돌아가기
                 </Link>
             </main>
@@ -77,7 +74,7 @@ export default function ProjectDetailPage({
 
     return (
         <main style={{ maxWidth: 980, margin: "0 auto", padding: "56px 20px" }}>
-            <Link href={`${BASE_PATH}/`} style={{ textDecoration: "underline", opacity: 0.85 }}>
+            <Link href="/" style={{ textDecoration: "underline", opacity: 0.85 }}>
                 ← Back
             </Link>
 
@@ -85,7 +82,6 @@ export default function ProjectDetailPage({
                 <h1 style={{ fontSize: 38, margin: 0 }}>{project.title}</h1>
                 <p style={{ marginTop: 10, opacity: 0.8 }}>{project.subtitle}</p>
             </header>
-
             <section style={{ marginBottom: 28 }}>
                 <h2 style={{ fontSize: 20, marginBottom: 10 }}>Overview</h2>
                 <p style={{ lineHeight: 1.7, opacity: 0.85 }}>{project.description}</p>

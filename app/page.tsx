@@ -1,4 +1,8 @@
 import Link from "next/link";
+
+// GitHub Pages basePath 대응 (예: /portfolio)
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export default function Home() {
     return (
         <main style={{ minHeight: "100vh", padding: "80px 24px", maxWidth: 1100, margin: "0 auto" }}>
@@ -73,7 +77,7 @@ export default function Home() {
                     ].map((item) => (
                         <Link
                             key={item.slug}
-                            href={`/projects/${item.slug}`}
+                            href={`${BASE_PATH}/projects/${item.slug}.html`}
                             style={{ textDecoration: "none", color: "inherit" }}
                         >
                             <div
@@ -89,10 +93,8 @@ export default function Home() {
                             </div>
                         </Link>
                     ))}
-
                 </div>
             </section>
-
 
             <section>
                 <h2 style={{ fontSize: 24, marginBottom: 14 }}>Contact</h2>

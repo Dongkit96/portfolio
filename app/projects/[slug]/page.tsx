@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const dynamic = "force-static";
-const BASE_PATH = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+
 
 const PROJECTS: Record<
     string,
@@ -150,7 +150,7 @@ export default async function ProjectDetailPage({
 
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
-                                    key={m.url}
+                                    key={`/${m.url}`}
                                     src={src}
                                     alt={m.label}
                                     style={{ width: "50%", height: "50%", objectFit: "cover",borderRadius:12, }}

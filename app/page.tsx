@@ -99,7 +99,7 @@ export default function Home() {
             <section>
                 <h2 style={{ fontSize: 24, marginBottom: 14 }}>Contact</h2>
                 <p style={{ opacity: 0.8 }}>
-                    Email: <b>your-email@example.com</b>
+                    Email: <b>saynight647@gmail.com</b>
                 </p>
             </section>
         </main>

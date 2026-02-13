@@ -21,8 +21,8 @@ const PROJECTS: Record<
         description:
             "게임용 캐릭터를 기준으로 하이폴리 → 리토폴로지 → UV → 텍스처 → 렌더까지 전체 파이프라인을 진행한 작업입니다.",
         media: [
-            { label: "Render Image", url: "/images/warrior_01.jpg" },
-            { label: "Wireframe", url: "/images/warrior_wire.jpg" },
+            { label: "Render Image", url: "C:\Users\stayn\Documents\portfolio\public/images/warrior_01.jpg" },
+            { label: "Wireframe", url: "C:\Users\stayn\Documents\portfolio\public/images/warrior_wire.jpg" },
         ],
     },
     topology: {
@@ -32,7 +32,7 @@ const PROJECTS: Record<
         tools: ["Blender", "ZBrush"],
         description:
             "애니메이션 변형을 고려한 쿼드 기반 토폴로지 설계와 관절/얼굴 영역 변형 테스트를 포함합니다.",
-        media: [{ label: "Topology Preview", url: "/images/topology_01.jpg" }],
+        media: [{ label: "Topology Preview", url: "C:\Users\stayn\Documents\portfolio\public/images/topology_01.jpg" }],
     },
     rigging: {
         title: "Rigging + Skinning",
@@ -41,7 +41,7 @@ const PROJECTS: Record<
         tools: ["Blender", "Auto-Rig Pro"],
         description:
             "게임 엔진(Unity/UE5) 연동을 고려하여 본 구조, 웨이트 페인팅, 기본 페이셜 세팅까지 진행했습니다.",
-        media: [{ label: "Rigging Preview", url: "/images/rig_01.jpg" }],
+        media: [{ label: "Rigging Preview", url: "C:\Users\stayn\Documents\portfolio\public/images/rig_01.jpg" }],
     },
 };
 

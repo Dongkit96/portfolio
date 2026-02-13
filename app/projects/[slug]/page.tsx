@@ -12,6 +12,8 @@ const PROJECTS: Record<
         description: string;
         media: { label: string; url: string }[];
     }
+
+
 > = {
     warrior: {
         title: "Warrior Character",
@@ -57,6 +59,7 @@ export default async function ProjectDetailPage({
     const { slug } = await params;
 
     const project = PROJECTS[slug];
+
 
     if (!project) {
         return (
@@ -146,15 +149,10 @@ export default async function ProjectDetailPage({
 
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
+                                    key={m.url}
                                     src={src}
                                     alt={m.label}
-                                    style={{
-                                        width: "100%",
-                                        height: 180,
-                                        objectFit: "cover",
-                                        borderRadius: 12,
-                                        border: "1px solid #1a1a1a",
-                                    }}
+                                    style={{ width: "100%", height: 180, objectFit: "cover" }}
                                 />
                             </div>
                         );

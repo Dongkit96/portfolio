@@ -1,9 +1,12 @@
 import Link from "next/link";
 
 // GitHub Pages basePath 대응 (예: /portfolio)
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const BASE_PATH = process.env.NODE_ENV === "production" ? "/portfolio" : "";;
 const isProd = process.env.NODE_ENV === "production";
+
+
 export default function Home() {
+
     return (
         <main style={{ minHeight: "100vh", padding: "80px 24px", maxWidth: 1100, margin: "0 auto" }}>
             <header style={{ marginBottom: 48 }}>
@@ -77,7 +80,7 @@ export default function Home() {
                     ].map((item) => (
                         <Link
                             key={item.slug}
-                            href={`/projects/${item.slug}/`}  // 핵심: 슬래시로 끝
+                            href={`${BASE_PATH}/projects/${item.slug}.html`}
                             style={{ textDecoration: "none", color: "inherit" }}
                         >
                             <div

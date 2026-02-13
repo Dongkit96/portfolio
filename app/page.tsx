@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 // GitHub Pages basePath 대응 (예: /portfolio)
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-//const BASE_PATH = process.env.NODE_ENV === "production" ? "/portfolio" : "";;
+//const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const BASE_PATH = process.env.NODE_ENV === "production" ? "/portfolio" : "";;
 const isProd = process.env.NODE_ENV === "production";
 
 
@@ -81,7 +81,7 @@ export default function Home() {
                     ].map((item) => (
                         <Link
                             key={item.slug}
-                            //href={/projects/${item.slug}/}
+                            //href={'/projects/${item.slug}.html'}
                             href={`${BASE_PATH}/projects/${item.slug}.html`}
                             style={{ textDecoration: "none", color: "inherit" }}
                         >

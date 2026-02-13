@@ -153,7 +153,7 @@ export default async function ProjectDetailPage({
                                     key={m.url}
                                     src={src}
                                     alt={m.label}
-                                    style={{ width: "100%", height: "100%", objectFit: "cover",borderRadius:12, }}
+                                    style={{ width: "50%", height: "50%", objectFit: "cover",borderRadius:12, }}
                                 />
                             </div>
                         );

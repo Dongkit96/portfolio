@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 // GitHub Pages basePath 대응 (예: /portfolio)
-const BASE_PATH = process.env.NODE_ENV === "production" ? "/portfolio" : "";;
+
 const isProd = process.env.NODE_ENV === "production";
 
 

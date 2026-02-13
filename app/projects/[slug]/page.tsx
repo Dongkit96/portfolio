@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export const dynamic = "force-static";
+const BASE_PATH = process.env.NODE_ENV === "production" ? "/portfolio" : "";
 
 const PROJECTS: Record<
     string,
@@ -152,7 +153,7 @@ export default async function ProjectDetailPage({
                                     key={m.url}
                                     src={src}
                                     alt={m.label}
-                                    style={{ width: "100%", height: "100%" }}
+                                    style={{ width: "100%", height: "100%", objectFit: "cover",borderRadius:12, }}
                                 />
                             </div>
                         );

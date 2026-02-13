@@ -81,8 +81,8 @@ export default function Home() {
                     ].map((item) => (
                         <Link
                             key={item.slug}
-                            //href={'/projects/${item.slug}.html'}
-                            href={`${BASE_PATH}/projects/${item.slug}.html`}
+                            href={'/projects/${item.slug}.html'}
+                            //href={`${BASE_PATH}/projects/${item.slug}.html`}
                             style={{ textDecoration: "none", color: "inherit" }}
                         >
                             <div

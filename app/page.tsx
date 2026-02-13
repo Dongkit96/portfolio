@@ -80,7 +80,7 @@ export default function Home() {
                     ].map((item) => (
                         <Link
                             key={item.slug}
-                            href={`/projects/${item.slug}/`}  // 핵심: 슬래시로 끝
+                            href={`${BASE_PATH}/projects/${item.slug}.html`}
                             style={{ textDecoration: "none", color: "inherit" }}
                         >
                             <div

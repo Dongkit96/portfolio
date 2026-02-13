@@ -151,7 +151,7 @@ export default async function ProjectDetailPage({
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     key={`/${m.url}`}
-                                    src={src}
+                                    src={`${BASE_PATH}${m.url}`}
                                     alt={m.label}
                                     style={{ width: "50%", height: "50%", objectFit: "cover",borderRadius:12, }}
                                 />

@@ -11,7 +11,7 @@ export default function Home() {
         <main className={styles.container}>
             <header className={styles.hero}>
                 <h1 className={styles.title}>3D Character Artist / Tech (Rigging)</h1>
-                <p className={styles.sub}>>
+                <p className={styles.sub}>
                     Unity · UE5 | Character Modeling · Retopo · Rigging · Game-ready Pipeline
                 </p>
 
